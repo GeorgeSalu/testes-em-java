@@ -100,14 +100,23 @@ public class SimpleMathTest {
 		assertEquals(expected, actual);
 	}
 	
-	@Disabled
+	//@Disabled
 	@DisplayName("teste divisao por zero")
 	@Test
 	public void testDivisaoPorZero() {
-		// Given / Arrange
-		// When / Act
-		// Then / Assert
-		fail();
+		
+		// given
+		double firstNumber = 6.2D;
+		double secondNumber = 0D;
+		
+		var expectedMessage = "Impossivel dividir por zero";
+		
+		ArithmeticException actual = assertThrows(ArithmeticException.class, () -> {
+			// when & then
+			math.division(firstNumber, secondNumber);
+		});
+		
+		assertEquals(expectedMessage, actual.getMessage());
 	}
 	
 }
