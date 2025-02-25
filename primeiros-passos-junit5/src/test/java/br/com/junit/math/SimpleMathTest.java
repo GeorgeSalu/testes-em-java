@@ -13,6 +13,8 @@ public class SimpleMathTest {
 		double expected = 8.2D;
 		
 		assertEquals(expected, actual, "6.2 + 2 resultou em 8.2");
+		assertNotEquals(9.2, actual);
+		assertNotNull(actual);
 	}
 	
 }
