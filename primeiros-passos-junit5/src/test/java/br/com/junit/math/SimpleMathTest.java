@@ -17,12 +17,12 @@ public class SimpleMathTest {
 	
 	@BeforeAll
 	static void setup() {
-		System.out.println("before all");
+		//System.out.println("before all");
 	}
 	
 	@AfterAll
 	static void cleanup() {
-		System.out.println("after all");
+		//System.out.println("after all");
 	}
 	
 	@BeforeEach
@@ -32,7 +32,7 @@ public class SimpleMathTest {
 	
 	@AfterEach
 	void afterEachMethod() {
-		System.out.println("after each");
+		//System.out.println("after each");
 	}
 	
 	@Test
