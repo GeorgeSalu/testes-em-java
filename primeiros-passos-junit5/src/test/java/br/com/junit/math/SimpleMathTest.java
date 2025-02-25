@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class SimpleMathTest {
 
 	@Test
-	public void testaSoma() {
+	public void testaSoma_Quando_SeisPontoDoisMaisDois_RetornaOitoPontoDois() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
