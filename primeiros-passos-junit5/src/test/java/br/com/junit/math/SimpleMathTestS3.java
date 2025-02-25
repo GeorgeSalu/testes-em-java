@@ -11,7 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("teste operacoes em SimpleMath")
-public class SimpleMathTest {
+public class SimpleMathTestS3 {
 
 	SimpleMath math;
 	
