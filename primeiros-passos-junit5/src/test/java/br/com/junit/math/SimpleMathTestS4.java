@@ -12,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName("teste operacoes em SimpleMath")
@@ -68,7 +69,12 @@ public class SimpleMathTestS4 {
 	
 	@DisplayName("teste 6.2 / 2 = 3.1")
 	@ParameterizedTest
-	@MethodSource("testaDivisaoEntradaParametros")
+	//@MethodSource("testaDivisaoEntradaParametros")
+	@CsvSource({
+		"6.2, 2, 3.1",
+		"71, 14, 5.07",
+		"18.3, 3.1, 5.90"
+	})
 	public void testaDivisao(double firstNumber,double secondNumber,double expected) {
 		
 		Double actual = math.division(firstNumber, secondNumber);
