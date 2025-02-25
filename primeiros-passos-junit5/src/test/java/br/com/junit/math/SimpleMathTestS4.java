@@ -14,6 +14,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("teste operacoes em SimpleMath")
 public class SimpleMathTestS4 {
@@ -23,6 +24,12 @@ public class SimpleMathTestS4 {
 	@BeforeEach
 	void beforeEachMethod() {
 		math = new SimpleMath();
+	}
+	
+	@ParameterizedTest
+	@ValueSource(strings = {"Pele", "Senna", "Keith"})
+	public void testeValueSource(String firstName) {
+		assertNotNull(firstName);
 	}
 
 	@Test
