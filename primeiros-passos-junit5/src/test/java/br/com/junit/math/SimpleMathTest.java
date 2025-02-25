@@ -105,7 +105,7 @@ public class SimpleMathTest {
 	}
 	
 	@Disabled
-	@DisplayName("")
+	@DisplayName("teste divisao por zero")
 	@Test
 	public void testDivisaoPorZero() {
 		// Given / Arrange
