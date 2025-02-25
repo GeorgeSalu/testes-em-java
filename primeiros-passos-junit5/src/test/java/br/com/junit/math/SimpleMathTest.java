@@ -56,7 +56,6 @@ public class SimpleMathTest {
 	@Test
 	@DisplayName("teste 6.2 - 2 = 4.2")
 	public void testaSubtracao() {
-		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
 		
@@ -69,7 +68,6 @@ public class SimpleMathTest {
 	@Test
 	@DisplayName("teste 6.2 * 2 = 12.4")
 	public void testaMultiplicacao() {
-		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
 		
@@ -82,7 +80,6 @@ public class SimpleMathTest {
 	@Test
 	@DisplayName("teste 6.2 / 2 = 3.1")
 	public void testaDivisao() {
-		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
 		
@@ -95,7 +92,6 @@ public class SimpleMathTest {
 	@Test
 	@DisplayName("teste raiz quadrada de 81 é 9")
 	public void testaMedia() {
-		SimpleMath math = new SimpleMath();
 		double number = 81D;
 		
 		Double actual = math.squareRoot(number);
