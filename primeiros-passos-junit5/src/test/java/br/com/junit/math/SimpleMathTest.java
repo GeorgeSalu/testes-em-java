@@ -2,6 +2,10 @@ package br.com.junit.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,11 +13,33 @@ import org.junit.jupiter.api.Test;
 @DisplayName("teste operacoes em SimpleMath")
 public class SimpleMathTest {
 
+	SimpleMath math;
+	
+	@BeforeAll
+	static void setup() {
+		System.out.println("before all");
+	}
+	
+	@AfterAll
+	static void cleanup() {
+		System.out.println("after all");
+	}
+	
+	@BeforeEach
+	void beforeEachMethod() {
+		math = new SimpleMath();
+	}
+	
+	@AfterEach
+	void afterEachMethod() {
+		System.out.println("after each");
+	}
+	
 	@Test
 	@DisplayName("teste 6.2 + 2 = 8.2")
 	public void testaSoma_Quando_SeisPontoDoisMaisDois_RetornaOitoPontoDois() {
 		// given / Arrange
-		SimpleMath math = new SimpleMath();
+		
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
 		double expected = 8.2D;
