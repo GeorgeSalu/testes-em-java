@@ -11,13 +11,16 @@ public class SimpleMathTest {
 	@Test
 	@DisplayName("teste 6.2 + 2 = 8.2")
 	public void testaSoma_Quando_SeisPontoDoisMaisDois_RetornaOitoPontoDois() {
+		// given / Arrange
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
 		double secondNumber = 2D;
-		
-		Double actual = math.sum(firstNumber, secondNumber);
 		double expected = 8.2D;
 		
+		// when / Act
+		Double actual = math.sum(firstNumber, secondNumber);
+		
+		// then / Assert
 		assertEquals(expected, actual, () -> firstNumber +" + "+secondNumber+" nao resultou em "+expected+"");
 		assertNotEquals(9.2, actual);
 		assertNotNull(actual);
