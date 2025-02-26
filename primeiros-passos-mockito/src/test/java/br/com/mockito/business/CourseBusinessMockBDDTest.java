@@ -4,6 +4,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,6 +51,21 @@ class CourseBusinessMockBDDTest {
 		
 		// Then / Assert
 		assertThat(filteredCourses.size(), is(4));
+	}
+	
+	@Test
+	public void testaOperacaoDeDeleteDeCurso() {
+		// Given / Arrange
+		given(mockService.retrieveCourses("Leandro")).willReturn(courses);
+		
+		// When / Act
+		business.deleteCoursesNotRelatedToSpring("Leandro");
+		
+		
+		// Then / Assert
+		verify(mockService).deleteCourse("Agile Desmistificado com Scrum, XP, Kanban e Trello");
+		verify(mockService).deleteCourse("Arquitetura de Microsserviços do 0 com ASP.NET, .NET 6 e C#");
+		verify(mockService, never()).deleteCourse("REST API's RESTFul do 0 à AWS com Spring Boot 3 Java e Docker");
 	}
 
 
