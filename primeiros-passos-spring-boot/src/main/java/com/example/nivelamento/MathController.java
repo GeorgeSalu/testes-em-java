@@ -15,9 +15,23 @@ public class MathController {
 	@RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
 	public Double sum(
 			@PathVariable(value = "numberOne") String numberOne,
-			@PathVariable(value = "numberTwo") String numberTwo) {
+			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 		
-		return 1D;
+		if (isNumeric(numberOne) || isNumeric(numberTwo)) {
+			throw new Exception();
+		}
+		
+		return convertToDouble(numberOne) + convertToDouble(numberTwo);
+	}
+
+	private Double convertToDouble(String strNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private boolean isNumeric(String numberOne) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
