@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import br.com.mockito.service.CourseService;
 import br.com.mockito.service.stub.CourseServiceStub;
 
-class CourseBusinessTest {
+class CourseBusinessStubTest {
 
 	@Test
 	public void testCoursesRelatedToSpring_When_UsingAStub() {
