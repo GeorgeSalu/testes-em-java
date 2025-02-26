@@ -26,4 +26,20 @@ public class PersonServiceTest {
 		assertNotNull(actual);
 	}
 	
+	@DisplayName("quando criar uma pessoa com sucesso deve retornar um objeto de pessoa com firstname")
+	@Test
+	public void testeQuandoCriarUmaPessoaDeveRetornarUmObjetoDePessoaComFirstName() {
+		// Given / Arrange
+		IPersonService service = new PersonService();
+		
+		Person person = new Person("keith", "moon", "keith@gmail.com", "sao paulo", "feminino");
+		
+		// When / Act
+		Person actual = service.createPerson(person);
+		
+		// Then / Assert
+		assertNotNull(actual);
+		assertEquals(person.getFirstName(), actual.getFirstName());
+	}
+	
 }
