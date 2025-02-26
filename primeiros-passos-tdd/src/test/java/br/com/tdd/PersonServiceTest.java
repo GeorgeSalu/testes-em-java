@@ -30,7 +30,7 @@ public class PersonServiceTest {
 		Person actual = service.createPerson(person);
 		
 		// Then / Assert
-		assertNotNull(actual);
+		assertNotNull(actual, () -> "o metodo createPerson() nao deve retornar null");
 	}
 	
 	@DisplayName("quando criar uma pessoa com sucesso deve retornar um objeto de pessoa com firstname")
@@ -45,7 +45,7 @@ public class PersonServiceTest {
 		
 		// Then / Assert
 		assertNotNull(actual);
-		assertEquals(person.getFirstName(), actual.getFirstName());
+		assertEquals(person.getFirstName(), actual.getFirstName(), () -> "o person firstname é incorreto");
 	}
 	
 }
