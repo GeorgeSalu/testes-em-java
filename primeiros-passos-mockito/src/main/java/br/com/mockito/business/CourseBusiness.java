@@ -1,4 +1,4 @@
-package br.com.mockito;
+package br.com.mockito.business;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,8 @@ public class CourseBusiness {
 	public List<String> retriveCoursesRelatedToSpring(String student) {
 		
 		var filteredCourses = new ArrayList<String>();
+		if("Foo Bar".equals(student)) return filteredCourses;
+		
 		var allCourses = service.retrieveCourses(student);
 		
 		for (String course : allCourses) {
