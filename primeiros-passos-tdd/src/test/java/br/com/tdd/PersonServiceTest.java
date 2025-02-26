@@ -12,10 +12,12 @@ import br.com.tdd.service.PersonService;
 
 public class PersonServiceTest {
 	
+	IPersonService service;
 	Person person;
 	
 	@BeforeEach
 	void setup() {
+		service = new PersonService();
 		person = new Person("keith", "moon", "keith@gmail.com", "sao paulo", "feminino");
 	}
 
@@ -23,7 +25,6 @@ public class PersonServiceTest {
 	@Test
 	public void testeQuandoCriarUmaPessoaDeveRetornarUmObjetoDePessoa() {
 		// Given / Arrange
-		IPersonService service = new PersonService();
 		
 		
 		// When / Act
@@ -37,8 +38,6 @@ public class PersonServiceTest {
 	@Test
 	public void testeQuandoCriarUmaPessoaDeveRetornarUmObjetoDePessoaComFirstName() {
 		// Given / Arrange
-		IPersonService service = new PersonService();
-		
 		
 		// When / Act
 		Person actual = service.createPerson(person);
@@ -57,7 +56,6 @@ public class PersonServiceTest {
 	@Test
 	public void testeCriaPerson_QuandoEmailNull_RetornarIllegalArgumentException() {
 		// Given / Arrange
-		IPersonService service = new PersonService();
 		person.setEmail(null);
 		
 		
