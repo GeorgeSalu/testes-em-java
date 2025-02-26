@@ -45,6 +45,7 @@ public class PersonServiceTest {
 		
 		// Then / Assert
 		assertNotNull(actual);
+		assertNotNull(person.getId(), () -> "person id é null");
 		assertEquals(person.getFirstName(), actual.getFirstName(), () -> "o person firstname é incorreto");
 		assertEquals(person.getLastName(), actual.getLastName(), () -> "o person lastname é incorreto");
 		assertEquals(person.getAddress(), actual.getAddress(), () -> "o person address é incorreto");
