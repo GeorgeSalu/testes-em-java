@@ -62,12 +62,16 @@ public class PersonServiceTest {
 		
 		
 		// When / Act
+		var mensagemExperada = "o email de person nao pode esta null ou vazio";
 		
 		// Then / Assert
-		assertThrows(
+		IllegalArgumentException e = assertThrows(
 				IllegalArgumentException.class, 
 				() -> service.createPerson(person),
-				() -> "Email em branco lanca IllegalArgumentException");
+				() -> "Email em branco lanca IllegalArgumentException"
+		);
+		
+		assertEquals(mensagemExperada, e.getMessage());
 	}
 	
 }
