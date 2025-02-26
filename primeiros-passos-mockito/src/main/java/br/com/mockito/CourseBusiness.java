@@ -5,8 +5,10 @@ import java.util.List;
 
 import br.com.mockito.service.CourseService;
 
+// CourseBusiness = SUT - System (Method) Under Test
 public class CourseBusiness {
 
+	// CourseService é uma dependencia
 	private CourseService service;
 
 	public CourseBusiness(CourseService service) {
