@@ -3,7 +3,6 @@ package br.com.mockito.business;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.BDDMockito.*;
-import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
 import java.util.List;
