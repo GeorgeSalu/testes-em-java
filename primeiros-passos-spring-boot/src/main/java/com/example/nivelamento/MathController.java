@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.nivelamento.exceptions.UnsuportedMathOperationException;
+
 @RestController
 public class MathController {
 
@@ -14,7 +16,7 @@ public class MathController {
 			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
 		
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new Exception();
+			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
 		return convertToDouble(numberOne) + convertToDouble(numberTwo);
