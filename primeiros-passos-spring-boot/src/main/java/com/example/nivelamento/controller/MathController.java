@@ -1,4 +1,4 @@
-package com.example.nivelamento;
+package com.example.nivelamento.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
