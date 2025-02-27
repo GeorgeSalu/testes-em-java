@@ -17,6 +17,7 @@ public class PersonService {
 	
 	public List<Person> findAll() {
 		
+		logger.info("find all people");
 		List<Person> persons = new ArrayList<Person>();
 		
 		for(int i = 0;i < 8;i++) {
@@ -40,6 +41,11 @@ public class PersonService {
 		return person;
 	}
 
+	public Person create(Person person) {
+		
+		logger.info("create person");
+		return person;
+	}
 
 	private Person mockPerson(int i) {
 		
