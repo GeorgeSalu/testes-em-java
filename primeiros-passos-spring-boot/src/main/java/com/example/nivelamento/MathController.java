@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.nivelamento.converter.NumberConverter;
 import com.example.nivelamento.exceptions.UnsuportedMathOperationException;
+import com.example.nivelamento.math.SimpleMath;
 
 @RestController
 public class MathController {
+	
+	private SimpleMath math = new SimpleMath();
 
 	@RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
 	public Double sum(
@@ -20,7 +23,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return NumberConverter.convertToDouble(numberOne) + NumberConverter.convertToDouble(numberTwo);
+		return math.sum(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 	}
 	
 	@RequestMapping(value = "/subtraction/{numberOne}/{numberTwo}", method = RequestMethod.GET)
@@ -32,7 +35,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return NumberConverter.convertToDouble(numberOne) - NumberConverter.convertToDouble(numberTwo);
+		return math.subtraction( NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 	}
 	
 	@RequestMapping(value = "/multiplication/{numberOne}/{numberTwo}", method = RequestMethod.GET)
@@ -44,7 +47,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return NumberConverter.convertToDouble(numberOne) * NumberConverter.convertToDouble(numberTwo);
+		return math.multiplication( NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 	}
 	
 	@RequestMapping(value = "/division/{numberOne}/{numberTwo}", method = RequestMethod.GET)
@@ -56,7 +59,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return NumberConverter.convertToDouble(numberOne) / NumberConverter.convertToDouble(numberTwo);
+		return math.division( NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 	}
 	
 	@RequestMapping(value = "/mean/{numberOne}/{numberTwo}", method = RequestMethod.GET)
@@ -68,7 +71,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return (NumberConverter.convertToDouble(numberOne) + NumberConverter.convertToDouble(numberTwo)) / 2;
+		return math.mean(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 	}
 	
 	@RequestMapping(value = "/squareRoot/{number}", method = RequestMethod.GET)
@@ -79,7 +82,7 @@ public class MathController {
 			throw new UnsuportedMathOperationException("por favor entre com um valor numerico");
 		}
 		
-		return Math.sqrt(NumberConverter.convertToDouble(number));
+		return math.squareRoot((NumberConverter.convertToDouble(number)));
 	}
 	
 }
