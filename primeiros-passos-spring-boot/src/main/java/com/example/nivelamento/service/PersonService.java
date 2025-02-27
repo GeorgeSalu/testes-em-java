@@ -52,6 +52,11 @@ public class PersonService {
 		logger.info("update person");
 		return person;
 	}
+	
+	public void delete(String id) {
+		
+		logger.info("delete person");
+	}
 
 	private Person mockPerson(int i) {
 		
