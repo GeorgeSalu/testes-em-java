@@ -29,24 +29,20 @@ public class PersonController {
 		return service.findAll();
 	}
 	
-	@GetMapping(value = "/{id}",
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person findById(@PathVariable(value = "id") Long id) {
 		return service.findById(id);
 	}
 	
-	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person create(@RequestBody Person person) {
 		return service.create(person);
 	}
 	
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person update(@RequestBody Person person) {
 		return service.update(person);
 	}
-	
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> delete(@PathVariable(value = "id") Long id) {
