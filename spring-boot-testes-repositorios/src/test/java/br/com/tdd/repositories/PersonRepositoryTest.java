@@ -51,5 +51,21 @@ class PersonRepositoryTest {
 		assertNotNull(person0);
 		assertEquals(2, personList.size());;
 	}
+	
+	@DisplayName("testa operacao responsavel por buscar pessoa por id")
+	@Test
+	public void testaOperacaoResponsavelPorBuscarPessoaPorId() {
+		// Given / Arrange
+		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
+
+		repository.save(person0);
+		
+		// When / Act
+		Person savedPerson = repository.findById(person0.getId()).get();
+		
+		// Then / Assert
+		assertNotNull(person0);
+		assertEquals(person0.getId(), savedPerson.getId());;
+	}
 
 }
