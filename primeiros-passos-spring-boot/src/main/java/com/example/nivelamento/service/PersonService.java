@@ -1,73 +1,63 @@
 package com.example.nivelamento.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.nivelamento.exceptions.ResourceNotFoundException;
 import com.example.nivelamento.model.Person;
+import com.example.nivelamento.repository.PersonRepository;
 
 @Service
 public class PersonService {
 
-	private final AtomicLong counter = new AtomicLong();
 	private Logger logger = Logger.getLogger(PersonService.class.getName());
+	
+	@Autowired
+	private PersonRepository repository;
 	
 	public List<Person> findAll() {
 		
-		logger.info("find all people");
-		List<Person> persons = new ArrayList<Person>();
-		
-		for(int i = 0;i < 8;i++) {
-			Person person = mockPerson(i);
-			persons.add(person);
-		}
-		
-		return persons;
+		return repository.findAll();
 	}
 
-	public Person findById(String id) {
+	public Person findById(Long id) {
 		
 		logger.info("find one person");
-		Person person = new Person();
-		person.setId(counter.incrementAndGet());
-		person.setFirstName("george");
-		person.setLastName("silva");
-		person.setAddress("belem");
-		person.setGender("masculino");
 		
-		return person;
+		return repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("nao existe pessoa com esse id"));
 	}
 
 	public Person create(Person person) {
 		
 		logger.info("create person");
-		return person;
+		return repository.save(person);
 	}
 	
 	public Person update(Person person) {
 		
 		logger.info("update person");
+		
+		Person entity = repository.findById(person.getId())
+				.orElseThrow(() -> new ResourceNotFoundException("nao existe pessoa com esse id"));
+		
+		entity.setFirstName(person.getFirstName());
+		entity.setLastName(person.getLastName());
+		entity.setAddress(person.getAddress());
+		entity.setGender(person.getGender());
+		
 		return person;
 	}
 	
-	public void delete(String id) {
+	public void delete(Long id) {
 		
-		logger.info("delete person");
-	}
-
-	private Person mockPerson(int i) {
+		Person entity = repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("nao existe pessoa com esse id"));
 		
-		Person person = new Person();
-		person.setId(counter.incrementAndGet());
-		person.setFirstName("perons name "+i);
-		person.setLastName("last name "+i);
-		person.setAddress("belem");
-		person.setGender("masculino");
-		
-		return person;
+		repository.delete(entity);
 	}
 	
 }
