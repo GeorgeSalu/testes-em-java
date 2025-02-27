@@ -36,7 +36,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("quando invocar findAll do repositorio de pessoas deve retornar uma lista de pessoas")
 	@Test
-	public void testaFindAllDePErson() {
+	public void testaFindAllDePerson() {
 		// Given / Arrange
 		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 		Person person1 = new Person("george", "silva", "george@gmail.com", "belem", "m");
