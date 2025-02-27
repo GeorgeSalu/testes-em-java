@@ -20,7 +20,7 @@ class PersonRepositoryTest {
 	@Autowired
 	private PersonRepository repository;
 	
-	@DisplayName("quando um objeto person for salvo ele deve retornar o mesmo objeto salvo")
+	@DisplayName("testa operacao responsavel por salvar uma pessoa")
 	@Test
 	public void testaQuandoUmObjeto_ForSalvo_EleDeveRetornarORegistroSalvo() {
 		// Given / Arrange
@@ -34,7 +34,7 @@ class PersonRepositoryTest {
 		assertTrue(savedPerson.getId() > 0);
 	}
 	
-	@DisplayName("quando invocar findAll do repositorio de pessoas deve retornar uma lista de pessoas")
+	@DisplayName("testa operacao responsavel por buscar todas pessoas")
 	@Test
 	public void testaQuandoBuscaTodosOsRegistrosDePerson() {
 		// Given / Arrange
