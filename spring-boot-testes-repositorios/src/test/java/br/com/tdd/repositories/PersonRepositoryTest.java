@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -103,6 +104,23 @@ class PersonRepositoryTest {
 		assertNotNull(updatedPerson);
 		assertEquals("Leonardo", updatedPerson.getFirstName());
 		assertEquals("leonardo@gmail.com.br", updatedPerson.getEmail());
+	}
+	
+	@DisplayName("testa operacao responsavel por deletar um resgistro de pessoa")
+	@Test
+	public void testaOperacaoResponsavelPorDeletarUmRegistroDePessoa() {
+		// Given / Arrange
+		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
+
+		repository.save(person0);
+		
+		// When / Act
+		repository.deleteById(person0.getId());
+		
+		Optional<Person> personOptional = repository.findById(person0.getId());
+		
+		// Then / Assert
+		assertTrue(personOptional.isEmpty());
 	}
 
 }
