@@ -21,7 +21,7 @@ class PersonRepositoryTest {
 	@Autowired
 	private PersonRepository repository;
 	
-	@DisplayName("testa operacao responsavel por salvar uma pessoa")
+	@DisplayName("operacao responsavel por salvar uma pessoa")
 	@Test
 	public void testaQuandoUmObjeto_ForSalvo_EleDeveRetornarORegistroSalvo() {
 		// Given / Arrange
@@ -35,7 +35,7 @@ class PersonRepositoryTest {
 		assertTrue(savedPerson.getId() > 0);
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar todas pessoas")
+	@DisplayName("operacao responsavel por buscar todas pessoas")
 	@Test
 	public void testaQuandoBuscaTodosOsRegistrosDePerson() {
 		// Given / Arrange
@@ -53,7 +53,7 @@ class PersonRepositoryTest {
 		assertEquals(2, personList.size());;
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar pessoa por id")
+	@DisplayName("operacao responsavel por buscar pessoa por id")
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorId() {
 		// Given / Arrange
@@ -69,7 +69,7 @@ class PersonRepositoryTest {
 		assertEquals(person0.getId(), savedPerson.getId());;
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar pessoa por email")
+	@DisplayName("operacao responsavel por buscar pessoa por email")
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorEmail() {
 		// Given / Arrange
@@ -85,7 +85,7 @@ class PersonRepositoryTest {
 		assertEquals(person0.getId(), savedPerson.getId());;
 	}
 	
-	@DisplayName("testa operacao responsavel por atualizar um resgistro de pessoa")
+	@DisplayName("operacao responsavel por atualizar um resgistro de pessoa")
 	@Test
 	public void testaOperacaoResponsavelPorAtualizarUmRegistroDePessoa() {
 		// Given / Arrange
@@ -106,7 +106,7 @@ class PersonRepositoryTest {
 		assertEquals("leonardo@gmail.com.br", updatedPerson.getEmail());
 	}
 	
-	@DisplayName("testa operacao responsavel por deletar um resgistro de pessoa")
+	@DisplayName("operacao responsavel por deletar um resgistro de pessoa")
 	@Test
 	public void testaOperacaoResponsavelPorDeletarUmRegistroDePessoa() {
 		// Given / Arrange
@@ -123,7 +123,7 @@ class PersonRepositoryTest {
 		assertTrue(personOptional.isEmpty());
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar pessoa por firstName e lastName")
+	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName")
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastName() {
 		// Given / Arrange
@@ -140,7 +140,7 @@ class PersonRepositoryTest {
 		assertEquals("silva", savedPerson.getLastName());
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar pessoa por firstName e lastName usando named parameters")
+	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando named parameters")
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoNamedParameters() {
 		// Given / Arrange
@@ -157,7 +157,7 @@ class PersonRepositoryTest {
 		assertEquals("silva", savedPerson.getLastName());
 	}
 	
-	@DisplayName("testa operacao responsavel por buscar pessoa por firstName e lastName usando sql nativo")
+	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando sql nativo")
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativo() {
 		// Given / Arrange
