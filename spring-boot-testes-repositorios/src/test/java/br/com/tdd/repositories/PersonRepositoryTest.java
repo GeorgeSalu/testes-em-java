@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,17 @@ class PersonRepositoryTest {
 	@Autowired
 	private PersonRepository repository;
 	
+	private Person person0;
+	
+	@BeforeEach
+	public void setup() {
+		person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
+	}
+	
 	@DisplayName("operacao responsavel por salvar uma pessoa")
 	@Test
 	public void testaQuandoUmObjeto_ForSalvo_EleDeveRetornarORegistroSalvo() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 		
 		// When / Act
 		Person savedPerson = repository.save(person0);
@@ -39,7 +46,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaQuandoBuscaTodosOsRegistrosDePerson() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 		Person person1 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
@@ -57,7 +63,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorId() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -73,7 +78,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorEmail() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -89,7 +93,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorAtualizarUmRegistroDePessoa() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -110,7 +113,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorDeletarUmRegistroDePessoa() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -127,7 +129,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastName() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -144,7 +145,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoNamedParameters() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -161,7 +161,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativo() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
@@ -178,7 +177,6 @@ class PersonRepositoryTest {
 	@Test
 	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativoENamedParameters() {
 		// Given / Arrange
-		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
 		repository.save(person0);
 		
