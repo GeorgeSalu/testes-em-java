@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tdd.model.Person;
-import br.com.tdd.services.PersonService;
+import br.com.tdd.service.PersonService;
 
 @RestController
 @RequestMapping("/person")
