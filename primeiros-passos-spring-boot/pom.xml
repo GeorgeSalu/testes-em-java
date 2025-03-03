@@ -13,7 +13,7 @@
 	<artifactId>primeiros-passos-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>primeiros-passos-spring-boot</name>
-	<description>Demo project for Spring Boot</description>
+	<description>projeto para explorar o spring boot</description>
 
 	<properties>
 		<java.version>17</java.version>
