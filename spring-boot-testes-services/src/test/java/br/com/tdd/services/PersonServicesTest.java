@@ -45,11 +45,11 @@ public class PersonServicesTest {
 		given(repository.save(person)).willReturn(person);
 		
 		// When / Act
-		Person savedPErson = service.create(person);
+		Person savedPerson = service.create(person);
 		
 		// Then / Assert
-		assertNotNull(savedPErson);
-		assertEquals("george", savedPErson.getFirstName());
+		assertNotNull(savedPerson);
+		assertEquals("george", savedPerson.getFirstName());
 	}
 
 }
