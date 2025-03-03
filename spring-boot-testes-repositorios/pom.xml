@@ -12,7 +12,7 @@
 	<artifactId>spring-boot-testes-repositorios</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-testes-repositorios</name>
-	<description>Demo project for Spring Boot</description>
+	<description>projeto para explorar teste de respositorios com spring boot</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
