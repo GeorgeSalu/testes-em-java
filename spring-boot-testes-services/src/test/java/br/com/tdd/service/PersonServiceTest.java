@@ -13,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import br.com.tdd.exceptions.ResourceNotFoundException;
 import br.com.tdd.model.Person;
 import br.com.tdd.repository.PersonRepository;
 
@@ -48,6 +49,22 @@ public class PersonServiceTest {
 		// Then / Assert
 		assertNotNull(savedPerson);
 		assertEquals("george", savedPerson.getFirstName());
+	}
+	
+	@DisplayName("valida o cadastro de pessoa com email ja existente na base de dados")
+	@Test
+	public void validaCadastroDePessoaComEmailJaExistenteNaBaseDeDados() {
+		// Given / Arrange
+		given(repository.findByEmail(anyString())).willReturn(Optional.of(person));
+		
+		// When / Act
+		assertThrows(ResourceNotFoundException.class, () -> {
+			service.create(person);
+		});
+		
+		
+		// Then / Assert
+		verify(repository, never()).save(any(Person.class));
 	}
 
 }
