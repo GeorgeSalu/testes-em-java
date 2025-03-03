@@ -37,7 +37,7 @@ public class PersonServicesTest {
 	
 	@DisplayName("valida o cadastro de person")
 	@Test
-	public void testaCadastroDePessoa() {
+	public void validaCadastroDePessoa() {
 		// Given / Arrange
 		given(repository.findByEmail(anyString())).willReturn(Optional.empty());
 		given(repository.save(person)).willReturn(person);
