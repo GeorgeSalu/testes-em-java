@@ -1,4 +1,4 @@
-package br.com.tdd.services;
+package br.com.tdd.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.tdd.model.Person;
 import br.com.tdd.repository.PersonRepository;
-import br.com.tdd.service.PersonService;
 
 import static org.mockito.BDDMockito.*;
 
