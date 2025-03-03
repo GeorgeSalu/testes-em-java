@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tdd.model.Person;
-import br.com.tdd.services.PersonServices;
+import br.com.tdd.services.PersonService;
 
 @RestController
 @RequestMapping("/person")
 public class PersonController {
 	
 	@Autowired
-	private PersonServices service;
+	private PersonService service;
 	
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Person> findAll() {
