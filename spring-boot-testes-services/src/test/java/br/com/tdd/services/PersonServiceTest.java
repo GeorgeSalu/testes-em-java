@@ -18,8 +18,8 @@ import br.com.tdd.repositories.PersonRepository;
 
 import static org.mockito.BDDMockito.*;
 
-@ExtendWith(MockitoExtension.class)
 @DisplayName("validando PersonService")
+@ExtendWith(MockitoExtension.class)
 public class PersonServiceTest {
 
 	@Mock
