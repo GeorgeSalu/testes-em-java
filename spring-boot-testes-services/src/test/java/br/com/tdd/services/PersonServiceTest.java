@@ -20,7 +20,7 @@ import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("validando PersonService")
-public class PersonServicesTest {
+public class PersonServiceTest {
 
 	@Mock
 	private PersonRepository repository;
