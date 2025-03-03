@@ -173,5 +173,22 @@ class PersonRepositoryTest {
 		assertEquals("george", savedPerson.getFirstName());
 		assertEquals("silva", savedPerson.getLastName());
 	}
+	
+	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando sql nativo e named parameters")
+	@Test
+	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativoENamedParameters() {
+		// Given / Arrange
+		Person person0 = new Person("george", "silva", "george@gmail.com", "belem", "m");
+
+		repository.save(person0);
+		
+		// When / Act
+		Person savedPerson = repository.findByNativeSQLNamedParameters("george", "silva");
+		
+		// Then / Assert
+		assertNotNull(person0);
+		assertEquals("george", savedPerson.getFirstName());
+		assertEquals("silva", savedPerson.getLastName());
+	}
 
 }
