@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.tdd.exceptions.ResourceNotFoundException;
 import br.com.tdd.model.Person;
-import br.com.tdd.repositories.PersonRepository;
+import br.com.tdd.repository.PersonRepository;
 
 @Service
 public class PersonService {

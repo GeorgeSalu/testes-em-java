@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import br.com.tdd.model.Person;
+import br.com.tdd.repository.PersonRepository;
 
 @DisplayName("testes sobre o repositorio PersonRepository")
 @DataJpaTest
