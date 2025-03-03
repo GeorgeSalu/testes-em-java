@@ -58,13 +58,14 @@ public class PersonServiceTest {
 		given(repository.findByEmail(anyString())).willReturn(Optional.of(person));
 		
 		// When / Act
-		assertThrows(ResourceNotFoundException.class, () -> {
+		ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
 			service.create(person);
 		});
 		
 		
 		// Then / Assert
 		verify(repository, never()).save(any(Person.class));
+		assertEquals("Person already exist with given email: "+person.getEmail(), ex.getMessage());
 	}
 
 }
