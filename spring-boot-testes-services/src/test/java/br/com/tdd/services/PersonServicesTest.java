@@ -35,9 +35,9 @@ public class PersonServicesTest {
 		person = new Person("george", "silva", "george@gmail.com", "belem", "m");
 	}
 	
-	@DisplayName("valida o cadastro de person")
+	@DisplayName("valida o cadastro de pessoa com sucesso")
 	@Test
-	public void validaCadastroDePessoa() {
+	public void validaCadastroDePessoaComSucesso() {
 		// Given / Arrange
 		given(repository.findByEmail(anyString())).willReturn(Optional.empty());
 		given(repository.save(person)).willReturn(person);
