@@ -1,4 +1,4 @@
-package br.com.tdd.controllers;
+package br.com.tdd.controller;
 
 import java.util.List;
 
