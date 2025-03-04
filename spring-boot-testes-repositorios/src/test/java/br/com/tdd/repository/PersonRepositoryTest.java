@@ -1,4 +1,4 @@
-package br.com.tdd.repositories;
+package br.com.tdd.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
