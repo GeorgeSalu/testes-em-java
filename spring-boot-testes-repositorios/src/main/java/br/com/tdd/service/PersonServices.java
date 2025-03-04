@@ -1,4 +1,4 @@
-package br.com.tdd.services;
+package br.com.tdd.service;
 
 import java.util.List;
 import java.util.logging.Logger;
