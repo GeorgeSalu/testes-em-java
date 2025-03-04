@@ -38,7 +38,7 @@ public class PersonServiceTest {
 	
 	@DisplayName("valida o cadastro de pessoa com sucesso")
 	@Test
-	public void validaCadastroDePessoaComSucessoDeveRetornarOObjetoCadastrado() {
+	public void valida_CadastroDePessoaComSucesso_DeveRetornarOObjetoCadastrado() {
 		// Given / Arrange
 		given(repository.findByEmail(anyString())).willReturn(Optional.empty());
 		given(repository.save(person)).willReturn(person);
