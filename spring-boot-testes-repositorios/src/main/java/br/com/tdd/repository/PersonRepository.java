@@ -1,4 +1,4 @@
-package br.com.tdd.repositories;
+package br.com.tdd.repository;
 
 import java.util.Optional;
 
