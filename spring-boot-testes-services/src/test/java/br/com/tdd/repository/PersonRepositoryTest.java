@@ -31,7 +31,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por salvar uma pessoa")
 	@Test
-	public void testaQuandoUmObjeto_ForSalvo_EleDeveRetornarORegistroSalvo() {
+	public void testa_QuandoUmObjetoForSalvo_DeveRetornarORegistroSalvo() {
 		// Given / Arrange
 		
 		// When / Act
@@ -44,7 +44,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar todas pessoas")
 	@Test
-	public void testaQuandoBuscaTodosOsRegistrosDePerson() {
+	public void testa_QuandoBuscaTodosOsRegistrosDePerson() {
 		// Given / Arrange
 		Person person1 = new Person("george", "silva", "george@gmail.com", "belem", "m");
 
@@ -61,7 +61,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por id")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorId() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorId_DeveRetornarOObjetoComIdBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -76,7 +76,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por email")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorEmail() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorEmail_DeveRetornarOObjetoComEmailBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -91,7 +91,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por atualizar um resgistro de pessoa")
 	@Test
-	public void testaOperacaoResponsavelPorAtualizarUmRegistroDePessoa() {
+	public void testa_OperacaoResponsavelPorAtualizarUmRegistroDePessoa__DeveRetornarOObjetoAtualizado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -111,7 +111,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por deletar um resgistro de pessoa")
 	@Test
-	public void testaOperacaoResponsavelPorDeletarUmRegistroDePessoa() {
+	public void testa_OperacaoResponsavelPorDeletarUmRegistroDePessoa() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -127,7 +127,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastName() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorFirstNameELastName_DeveRetornarOObjetoBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -143,7 +143,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando named parameters")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoNamedParameters() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoNamedParameters_DeveRetornarOObjetoBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -159,7 +159,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando sql nativo")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativo() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativo_DeveRetornarOObjetoBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
@@ -175,7 +175,7 @@ class PersonRepositoryTest {
 	
 	@DisplayName("operacao responsavel por buscar pessoa por firstName e lastName usando sql nativo e named parameters")
 	@Test
-	public void testaOperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativoENamedParameters() {
+	public void testa_OperacaoResponsavelPorBuscarPessoaPorFirstNameELastNameUsandoSQLNativoENamedParameters_DeveRetornarOObjetoBuscado() {
 		// Given / Arrange
 
 		repository.save(person0);
