@@ -53,7 +53,7 @@ public class PersonServiceTest {
 	
 	@DisplayName("valida o cadastro de pessoa com email ja existente na base de dados")
 	@Test
-	public void validaCadastroDePessoaComEmailJaExistenteNaBaseDeDados() {
+	public void valida_CadastroDePessoaComEmailJaExistenteNaBaseDeDados_DeveRetornarUmaException() {
 		// Given / Arrange
 		given(repository.findByEmail(anyString())).willReturn(Optional.of(person));
 		
