@@ -69,7 +69,7 @@ public class PersonServiceTest {
 		assertEquals("Person already exist with given email: "+person.getEmail(), ex.getMessage());
 	}
 	
-	@DisplayName("valida a consulta completa de persons")
+	@DisplayName("validacao para lista de pessoas fornecidade pelo metodo findAll() que deve retornar todas as pessoas")
 	@Test
 	public void valida_FindAllDePersons_DeveRetornarTodasAsPersonsCadastradas() {
 		// Given / Arrange
