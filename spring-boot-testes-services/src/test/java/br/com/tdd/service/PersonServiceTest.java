@@ -71,7 +71,7 @@ public class PersonServiceTest {
 	
 	@DisplayName("validacao para lista de pessoas fornecidade pelo metodo findAll() que deve retornar todas as pessoas")
 	@Test
-	public void valida_FindAllDePersons_DeveRetornarTodasAsPersonsCadastradas() {
+	public void valida_ListagemDePessoasFornecidoPorFindAll_DeveRetornarTodasAsPessoasCadastradas() {
 		// Given / Arrange
 		Person person2 = new Person("marcos", "pontes", "marcos@gmail.com", "belem", "m");
 		
