@@ -52,7 +52,7 @@ public class PersonServiceTest {
 		assertEquals("george", savedPerson.getFirstName());
 	}
 	
-	@DisplayName("valida o cadastro de pessoa com email ja existente na base de dados")
+	@DisplayName("valida o cadastro de pessoa com email ja usado por outro usuario")
 	@Test
 	public void valida_CadastroDePessoaComEmailJaExistenteNaBaseDeDados_DeveRetornarUmaException() {
 		// Given / Arrange
