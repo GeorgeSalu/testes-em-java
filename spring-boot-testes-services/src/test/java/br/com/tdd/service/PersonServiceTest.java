@@ -3,6 +3,7 @@ package br.com.tdd.service;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -66,6 +67,22 @@ public class PersonServiceTest {
 		// Then / Assert
 		verify(repository, never()).save(any(Person.class));
 		assertEquals("Person already exist with given email: "+person.getEmail(), ex.getMessage());
+	}
+	
+	@DisplayName("valida a consulta completa de persons")
+	@Test
+	public void valida_FindAllDePersons_DeveRetornarTodasAsPersonsCadastradas() {
+		// Given / Arrange
+		Person person2 = new Person("marcos", "pontes", "marcos@gmail.com", "belem", "m");
+		
+		given(repository.findAll()).willReturn(List.of(person, person2));
+		
+		// When / Act
+		List<Person> personsList = service.findAll();
+		
+		// Then / Assert
+		assertNotNull(personsList);
+		assertEquals(2, personsList.size());
 	}
 
 }
