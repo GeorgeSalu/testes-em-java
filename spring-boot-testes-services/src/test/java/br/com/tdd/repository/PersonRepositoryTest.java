@@ -15,7 +15,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import br.com.tdd.model.Person;
 
-@DisplayName("validando PersonRepository")
+@DisplayName("testes unitarios em PersonRepository")
 @DataJpaTest
 class PersonRepositoryTest {
 
