@@ -63,7 +63,6 @@ public class PersonServiceTest {
 			service.create(person);
 		});
 		
-		
 		// Then / Assert
 		verify(repository, never()).save(any(Person.class));
 		assertEquals("Person already exist with given email: "+person.getEmail(), ex.getMessage());
