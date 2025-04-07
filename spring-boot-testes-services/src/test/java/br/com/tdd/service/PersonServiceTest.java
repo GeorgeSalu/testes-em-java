@@ -114,6 +114,27 @@ public class PersonServiceTest {
 		assertEquals("george", savedPerson.getFirstName());
 	}
 	
+	@DisplayName("valida a atualizacao de pessoa e deve retornar o objeto atualizado")
+	@Test
+	public void valida_AtualizaDePessoaComSucesso_DeveRetornarOObjetoAtualizado() {
+		// Given / Arrange
+		person.setId(1l);
+		given(repository.findById(anyLong())).willReturn(Optional.of(person));
+		
+		person.setFirstName("Leonardo");
+		person.setEmail("leonardo@gmail.com");
+		
+		given(repository.save(person)).willReturn(person);
+		
+		// When / Act
+		Person updatedPerson = service.update(person);
+		
+		// Then / Assert
+		assertNotNull(updatedPerson);
+		assertEquals("Leonardo", updatedPerson.getFirstName());
+		assertEquals("leonardo@gmail.com", updatedPerson.getEmail());
+	}
+	
 }
 
 
