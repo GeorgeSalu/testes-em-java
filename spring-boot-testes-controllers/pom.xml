@@ -12,7 +12,7 @@
 	<artifactId>spring-boot-testes-controllers</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-testes-controllers</name>
-	<description>projeto para explorar teste de services com spring boot</description>
+	<description>projeto para explorar teste de controllers com spring boot</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
