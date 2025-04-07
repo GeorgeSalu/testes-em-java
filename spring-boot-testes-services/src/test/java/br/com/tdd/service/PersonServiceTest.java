@@ -3,6 +3,7 @@ package br.com.tdd.service;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,6 +83,21 @@ public class PersonServiceTest {
 		// Then / Assert
 		assertNotNull(personsList);
 		assertEquals(2, personsList.size());
+	}
+	
+	@DisplayName("valida a lista de pessoas fornecidade pelo metodo findAll() que deve retornar uma lista vazia")
+	@Test
+	public void valida_ListagemDePessoasFornecidoPorFindAll_DeveRetornarUmaListaVazia() {
+		// Given / Arrange
+		
+		given(repository.findAll()).willReturn(Collections.emptyList());
+		
+		// When / Act
+		List<Person> personsList = service.findAll();
+		
+		// Then / Assert
+		assertTrue(personsList.isEmpty());
+		assertEquals(0, personsList.size());
 	}
 
 }
