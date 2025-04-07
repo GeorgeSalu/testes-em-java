@@ -100,6 +100,20 @@ public class PersonServiceTest {
 		assertEquals(0, personsList.size());
 	}
 
+	@DisplayName("valida a consulta de pessoa por id com sucesso deve retornar o objeto cadastrado")
+	@Test
+	public void valida_ConsultaDePessoaPorIdComSucesso_DeveRetornarOObjetoCadastrado() {
+		// Given / Arrange
+		given(repository.findById(anyLong())).willReturn(Optional.of(person));
+		
+		// When / Act
+		Person savedPerson = service.findById(1l);
+		
+		// Then / Assert
+		assertNotNull(savedPerson);
+		assertEquals("george", savedPerson.getFirstName());
+	}
+	
 }
 
 
