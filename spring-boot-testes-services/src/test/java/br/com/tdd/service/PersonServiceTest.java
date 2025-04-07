@@ -135,6 +135,22 @@ public class PersonServiceTest {
 		assertEquals("leonardo@gmail.com", updatedPerson.getEmail());
 	}
 	
+	@DisplayName("valida a delecao de pessoa")
+	@Test
+	public void valida_DelecaoDePessoaComSucesso() {
+		// Given / Arrange
+		person.setId(1l);
+		given(repository.findById(anyLong())).willReturn(Optional.of(person));
+		
+		willDoNothing().given(repository).delete(person);
+		
+		// When / Act
+		service.delete(person.getId());
+		
+		// Then / Assert
+		verify(repository, times(1)).delete(person);
+	}
+	
 }
 
 
