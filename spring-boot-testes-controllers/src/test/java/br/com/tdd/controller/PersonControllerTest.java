@@ -87,7 +87,7 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.size()", is(persons.size())));
 	}
 	
-	@DisplayName("valida a operacao findById")
+	@DisplayName("valida endpoint que consulta pessoas por id")
 	@Test
 	public void valida_OperacaoDeFindById_DeveRetornarOObjetoCadastrado() throws JsonProcessingException, Exception {
 		// Given / Arrange
