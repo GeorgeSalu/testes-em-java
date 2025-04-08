@@ -144,7 +144,7 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.firstName", is(updatedPerson.getFirstName())));
 	}
 	
-	@DisplayName("valida endpoint de update de pessoa quando nao encontra a pessoa nabase")
+	@DisplayName("valida endpoint de update de pessoa quando nao encontra a pessoa na base")
 	@Test
 	public void valida_OperacaoDeUpdateDePessoaQuandoNaoEncontraPessoaNaBase_DeveRetornarException() throws JsonProcessingException, Exception {
 		// Given / Arrange
