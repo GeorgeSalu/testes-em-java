@@ -46,7 +46,7 @@ public class PersonControllerTest {
 		person = new Person("george", "silva", "george@gmail.com", "belem", "m");
 	}
 	
-	@DisplayName("testando a operacao de create")
+	@DisplayName("valida a operacao create")
 	@Test
 	public void valida_OperacaoDeCreate_DeveRetornarOObjetoSalvo() throws JsonProcessingException, Exception {
 		// Given / Arrange
