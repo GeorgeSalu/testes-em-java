@@ -13,7 +13,7 @@
 	<artifactId>spring-boot-testes-integracao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-testes-integracao</name>
-	<description>projeto para explorar teste de integracao com spring boot e testcontainers</description>
+	<description>projeto para explorar teste de integracao com spring boot e testcontainers com mysql</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
