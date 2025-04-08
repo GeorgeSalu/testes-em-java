@@ -49,7 +49,7 @@ public class PersonControllerTest {
 		person = new Person("george", "silva", "george@gmail.com", "belem", "m");
 	}
 	
-	@DisplayName("valida endpoint de criacao de person")
+	@DisplayName("valida endpoint de criacao de pessoa")
 	@Test
 	public void valida_OperacaoDeCreate_DeveRetornarOObjetoSalvo() throws JsonProcessingException, Exception {
 		// Given / Arrange
