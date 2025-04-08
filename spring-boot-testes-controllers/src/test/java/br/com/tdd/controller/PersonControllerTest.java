@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.tdd.exceptions.ResourceNotFoundException;
 import br.com.tdd.model.Person;
 import br.com.tdd.service.PersonService;
 
@@ -103,6 +104,21 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.firstName", is(person.getFirstName())))
 			.andExpect(jsonPath("$.firstName", is(person.getFirstName())))
 			.andExpect(jsonPath("$.firstName", is(person.getFirstName())));
+	}
+	
+	@DisplayName("valida endpoint que consulta pessoa por id quando nao existe pessoa com id informado")
+	@Test
+	public void valida_OperacaoDeFindById_QuandoNaoExistePessoaComIdInformado() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		long personId = 1l;
+		given(service.findById(personId)).willThrow(ResourceNotFoundException.class);
+
+		// When / Act
+		ResultActions response = mockMvc.perform(get("/person/{id}", personId));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isNotFound());
 	}
 	
 }
