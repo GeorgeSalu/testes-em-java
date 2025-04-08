@@ -87,6 +87,24 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.size()", is(persons.size())));
 	}
 	
+	@DisplayName("valida a operacao findById")
+	@Test
+	public void valida_OperacaoDeFindById_DeveRetornarOObjetoCadastrado() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		long personId = 1l;
+		given(service.findById(personId)).willReturn(person);
+
+		// When / Act
+		ResultActions response = mockMvc.perform(get("/person/{id}", personId));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isOk())
+			.andExpect(jsonPath("$.firstName", is(person.getFirstName())))
+			.andExpect(jsonPath("$.firstName", is(person.getFirstName())))
+			.andExpect(jsonPath("$.firstName", is(person.getFirstName())));
+	}
+	
 }
 
 
