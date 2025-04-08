@@ -121,6 +121,29 @@ public class PersonControllerTest {
 			andExpect(status().isNotFound());
 	}
 	
+	@DisplayName("valida endpoint de update de pessoa")
+	@Test
+	public void valida_OperacaoDeUpdateDePEssoa_DeveRetornarAPessoaAtualizada() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		long personId = 1l;
+		given(service.findById(personId)).willReturn(person);
+		given(service.update(any(Person.class))).willAnswer((invocation) -> invocation.getArgument(0));
+
+		// When / Act
+		Person updatedPerson = new Person("leonardo", "macadamia", "leonardo@gmail.com", "belem", "m");
+		
+		ResultActions response = mockMvc.perform(put("/person")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(mapper.writeValueAsString(updatedPerson)));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isOk())
+			.andExpect(jsonPath("$.firstName", is(updatedPerson.getFirstName())))
+			.andExpect(jsonPath("$.firstName", is(updatedPerson.getFirstName())))
+			.andExpect(jsonPath("$.firstName", is(updatedPerson.getFirstName())));
+	}
+	
 }
 
 
