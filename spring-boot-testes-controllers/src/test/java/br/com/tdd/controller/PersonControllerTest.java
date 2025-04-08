@@ -123,7 +123,7 @@ public class PersonControllerTest {
 	
 	@DisplayName("valida endpoint de update de pessoa")
 	@Test
-	public void valida_OperacaoDeUpdateDePEssoa_DeveRetornarAPessoaAtualizada() throws JsonProcessingException, Exception {
+	public void valida_OperacaoDeUpdateDePessoa_DeveRetornarAPessoaAtualizada() throws JsonProcessingException, Exception {
 		// Given / Arrange
 		long personId = 1l;
 		given(service.findById(personId)).willReturn(person);
@@ -146,7 +146,7 @@ public class PersonControllerTest {
 	
 	@DisplayName("valida endpoint de update de pessoa quando nao encontra a pessoa nabase")
 	@Test
-	public void valida_OperacaoDeUpdateDePEssoaQuandoNaoEncontraPessoaNaBase_DeveRetornarException() throws JsonProcessingException, Exception {
+	public void valida_OperacaoDeUpdateDePessoaQuandoNaoEncontraPessoaNaBase_DeveRetornarException() throws JsonProcessingException, Exception {
 		// Given / Arrange
 		long personId = 1l;
 		given(service.findById(personId)).willThrow(ResourceNotFoundException.class);
