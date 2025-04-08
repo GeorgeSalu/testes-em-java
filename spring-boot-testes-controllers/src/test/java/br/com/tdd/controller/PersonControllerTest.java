@@ -144,6 +144,28 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.firstName", is(updatedPerson.getFirstName())));
 	}
 	
+	@DisplayName("valida endpoint de update de pessoa quando nao encontra a pessoa nabase")
+	@Test
+	public void valida_OperacaoDeUpdateDePEssoaQuandoNaoEncontraPessoaNaBase_DeveRetornarException() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		long personId = 1l;
+		given(service.findById(personId)).willThrow(ResourceNotFoundException.class);
+		given(service.update(any(Person.class))).willAnswer((invocation) -> invocation.getArgument(1));
+
+		// When / Act
+		Person updatedPerson = new Person("leonardo", "macadamia", "leonardo@gmail.com", "belem", "m");
+		
+		ResultActions response = mockMvc.perform(put("/person")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(mapper.writeValueAsString(updatedPerson)));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isNotFound());
+	}
+	
+	
+	
 }
 
 
