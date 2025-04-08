@@ -21,6 +21,9 @@ import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -65,7 +68,28 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.firstName", is(person.getFirstName())));
 	}
 	
+	@DisplayName("valida a operacao findAll")
+	@Test
+	public void valida_OperacaoDeFindAll_DeveRetornarTodosOsObjetosCadastrados() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		List<Person> persons = new ArrayList<Person>();
+		persons.add(person);
+		persons.add(new Person("leonardo", "macadamia", "leonardo@gmail.com", "belem", "m"));
+		
+		given(service.findAll()).willReturn(persons);
+
+		// When / Act
+		ResultActions response = mockMvc.perform(get("/person"));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isOk())
+			.andExpect(jsonPath("$.size()", is(persons.size())));
+	}
+	
 }
+
+
 
 
 
