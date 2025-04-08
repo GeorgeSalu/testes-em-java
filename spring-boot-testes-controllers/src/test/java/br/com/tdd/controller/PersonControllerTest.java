@@ -68,7 +68,7 @@ public class PersonControllerTest {
 			.andExpect(jsonPath("$.firstName", is(person.getFirstName())));
 	}
 	
-	@DisplayName("valida a operacao findAll")
+	@DisplayName("valida endpoint que consulta todoas pessoas cadastradas")
 	@Test
 	public void valida_OperacaoDeFindAll_DeveRetornarTodosOsObjetosCadastrados() throws JsonProcessingException, Exception {
 		// Given / Arrange
