@@ -164,7 +164,21 @@ public class PersonControllerTest {
 			andExpect(status().isNotFound());
 	}
 	
-	
+	@DisplayName("valida endpoint de delete de pessoa")
+	@Test
+	public void valida_OperacaoDeDeleteDePessoa_NaoDeveRetornarNada() throws JsonProcessingException, Exception {
+		// Given / Arrange
+		long personId = 1l;
+		willDoNothing().given(service).delete(personId);
+		
+		// When / Act
+		
+		ResultActions response = mockMvc.perform(delete("/person/{id}", personId));
+
+		// Then / Assert
+		response.andDo(print()).
+			andExpect(status().isNoContent());
+	}
 	
 }
 
