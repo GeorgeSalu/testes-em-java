@@ -3,5 +3,5 @@
 - Junit;
 - Mockito;
 - Hamcrest;
-- RestAssured;
+- REST Assured;
 - Spring Boot;
