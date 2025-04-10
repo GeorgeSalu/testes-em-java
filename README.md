@@ -5,3 +5,4 @@
 - Hamcrest;
 - REST Assured;
 - Spring Boot;
+- Testcontainers
