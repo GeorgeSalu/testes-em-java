@@ -1,4 +1,4 @@
-## Testes Unitários com Java
+## Testes Unitários e de Integração com Java
 
 - Junit;
 - Mockito;
