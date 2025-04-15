@@ -3,7 +3,6 @@ package br.com.tdd.controller.integracao;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -44,9 +43,6 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 		person = new Person("george", "silva", "george@gmail.com", "belem", "m");
 	}
 	
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+
 
 }
