@@ -17,7 +17,7 @@ class SwaggerIntegrationTest extends AbstractIntegrationTest {
 
     @Test
     @DisplayName("Teste JUnit para a página de interface do usuário do Swagger")
-    void valida_SwaggerDisplayUiPage() {
+    void validacaoParaPaginaDeInterfaceDoSwagger() {
         var content = given()
             .basePath("/swagger-ui/index.html")
             .port(TestConfigs.SERVER_PORT)
