@@ -78,6 +78,13 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 		assertNotNull(createdPerson.getGender());
 		assertNotNull(createdPerson.getEmail());
 
+		
+		assertTrue(createdPerson.getId() > 0);
+		assertEquals("george", createdPerson.getFirstName());
+		assertEquals("silva", createdPerson.getLastName());
+		assertEquals("belem", createdPerson.getAddress());
+		assertEquals("m",createdPerson.getGender());
+		assertEquals("george@gmail.com", createdPerson.getEmail());
 	}
 	
 
