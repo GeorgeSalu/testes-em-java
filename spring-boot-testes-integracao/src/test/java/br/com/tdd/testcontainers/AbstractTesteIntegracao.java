@@ -11,8 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.lifecycle.Startables;
 
-@ContextConfiguration(initializers = AbstractIntegrationTest.Initializer.class)
-public class AbstractIntegrationTest {
+@ContextConfiguration(initializers = AbstractTesteIntegracao.Initializer.class)
+public class AbstractTesteIntegracao {
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 

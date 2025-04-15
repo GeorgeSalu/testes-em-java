@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.tdd.config.TestConfigs;
-import br.com.tdd.testcontainers.AbstractIntegrationTest;
+import br.com.tdd.testcontainers.AbstractTesteIntegracao;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DisplayName("Teste JUnit para Swagger")
-class SwaggerTesteIntegracao extends AbstractIntegrationTest {
+class SwaggerTesteIntegracao extends AbstractTesteIntegracao {
 
     @Test
     @DisplayName("Teste JUnit para a página de interface do usuário do Swagger")
