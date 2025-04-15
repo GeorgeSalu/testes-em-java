@@ -53,8 +53,8 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 	
 	@Test
 	@Order(1)
-	@DisplayName("JUnit integration given Person Object when create one Person should return a person object")
-	public void integrationTest_when_createOnePerson_shouldReturnAPersonObject() throws JsonMappingException, JsonProcessingException {
+	@DisplayName("Teste de integracao JUnit dado um objeto pessoa na operacao de create deve retornar um objeto pessoa")
+	public void testeDeIntegracao_Quando_CriarPessoa_deveRetornarObjetoPessoa() throws JsonMappingException, JsonProcessingException {
 		var content = given().spec(specification)
 					.contentType(TestConfigs.CONTENT_TYPE_JSON)
 					.body(person)
