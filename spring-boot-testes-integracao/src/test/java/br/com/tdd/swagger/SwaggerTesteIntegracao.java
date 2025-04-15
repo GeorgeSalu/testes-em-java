@@ -13,7 +13,7 @@ import br.com.tdd.testcontainers.AbstractIntegrationTest;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DisplayName("Teste JUnit para Swagger")
-class SwaggerIntegrationTest extends AbstractIntegrationTest {
+class SwaggerTesteIntegracao extends AbstractIntegrationTest {
 
     @Test
     @DisplayName("Teste JUnit para a página de interface do usuário do Swagger")
