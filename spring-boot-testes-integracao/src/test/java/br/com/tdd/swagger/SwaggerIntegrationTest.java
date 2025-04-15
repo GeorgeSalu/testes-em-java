@@ -12,6 +12,7 @@ import br.com.tdd.testcontainers.AbstractIntegrationTest;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@DisplayName("Junit valida swagger")
 class SwaggerIntegrationTest extends AbstractIntegrationTest {
 
     @Test
