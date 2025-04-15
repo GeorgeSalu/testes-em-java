@@ -15,8 +15,8 @@ import br.com.tdd.testcontainers.AbstractIntegrationTest;
 class SwaggerIntegrationTest extends AbstractIntegrationTest {
 
     @Test
-    @DisplayName("JUnit test for Should Display Swagger UI Page")
-    void testShouldDisplaySwaggerUiPage() {
+    @DisplayName("Junit valida swagger display ui page")
+    void valida_SwaggerDisplayUiPage() {
         var content = given()
             .basePath("/swagger-ui/index.html")
             .port(TestConfigs.SERVER_PORT)
