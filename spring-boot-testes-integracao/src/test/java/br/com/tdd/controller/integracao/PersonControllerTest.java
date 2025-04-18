@@ -90,7 +90,7 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 	@Test
 	@Order(2)
 	@DisplayName("Teste de integracao JUnit dado um objeto pessoa na operacao de update com sucesso deve retornar um objeto pessoa")
-	public void testeDeIntegracao_Quando_AtualizadnoPessoaComSucesso_deveRetornarObjetoPessoa() throws JsonMappingException, JsonProcessingException {
+	public void testeDeIntegracao_Quando_AtualizandoPessoaComSucesso_deveRetornarObjetoPessoa() throws JsonMappingException, JsonProcessingException {
 		
 		person.setFirstName("leonardo");
 		person.setEmail("leonardo@gmail.com");
@@ -127,6 +127,40 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 		assertEquals("leonardo@gmail.com", updatePerson.getEmail());
 	}
 	
+	@Test
+	@Order(3)
+	@DisplayName("Teste de integracao JUnit dado um objeto pessoa na operacao de update com sucesso deve retornar um objeto pessoa")
+	public void testeDeIntegracao_Quando_ConsultaPessoaPorId_deveRetornarObjetoPessoa() throws JsonMappingException, JsonProcessingException {
+		
+		
+		var content = given().spec(specification)
+				.pathParam("id", person.getId())
+	            .when()
+	                .get("{id}")
+	            .then()
+	                .statusCode(200)
+			            .extract()
+			                .body()
+			                    .asString();
+		
+		Person updatePerson = objectMapper.readValue(content, Person.class);
+		
+		
+		assertNotNull(updatePerson);
+		assertNotNull(updatePerson.getId());
+		assertNotNull(updatePerson.getFirstName());
+		assertNotNull(updatePerson.getLastName());
+		assertNotNull(updatePerson.getAddress());
+		assertNotNull(updatePerson.getGender());
+		assertNotNull(updatePerson.getEmail());
 
+		
+		assertTrue(updatePerson.getId() > 0);
+		assertEquals("leonardo", updatePerson.getFirstName());
+		assertEquals("silva", updatePerson.getLastName());
+		assertEquals("belem", updatePerson.getAddress());
+		assertEquals("m",updatePerson.getGender());
+		assertEquals("leonardo@gmail.com", updatePerson.getEmail());
+	}
 
 }
