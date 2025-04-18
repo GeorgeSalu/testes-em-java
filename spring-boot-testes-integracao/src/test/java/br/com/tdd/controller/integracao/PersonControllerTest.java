@@ -129,7 +129,7 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 	
 	@Test
 	@Order(3)
-	@DisplayName("Teste de integracao JUnit dado um objeto pessoa na operacao de update com sucesso deve retornar um objeto pessoa")
+	@DisplayName("Teste de integracao JUnit consulta de pessoa por id deve retornar um objeto pessoa")
 	public void testeDeIntegracao_Quando_ConsultaPessoaPorId_deveRetornarObjetoPessoa() throws JsonMappingException, JsonProcessingException {
 		
 		
