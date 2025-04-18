@@ -143,24 +143,24 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 			                .body()
 			                    .asString();
 		
-		Person updatePerson = objectMapper.readValue(content, Person.class);
+		Person findperson = objectMapper.readValue(content, Person.class);
 		
 		
-		assertNotNull(updatePerson);
-		assertNotNull(updatePerson.getId());
-		assertNotNull(updatePerson.getFirstName());
-		assertNotNull(updatePerson.getLastName());
-		assertNotNull(updatePerson.getAddress());
-		assertNotNull(updatePerson.getGender());
-		assertNotNull(updatePerson.getEmail());
+		assertNotNull(findperson);
+		assertNotNull(findperson.getId());
+		assertNotNull(findperson.getFirstName());
+		assertNotNull(findperson.getLastName());
+		assertNotNull(findperson.getAddress());
+		assertNotNull(findperson.getGender());
+		assertNotNull(findperson.getEmail());
 
 		
-		assertTrue(updatePerson.getId() > 0);
-		assertEquals("leonardo", updatePerson.getFirstName());
-		assertEquals("silva", updatePerson.getLastName());
-		assertEquals("belem", updatePerson.getAddress());
-		assertEquals("m",updatePerson.getGender());
-		assertEquals("leonardo@gmail.com", updatePerson.getEmail());
+		assertTrue(findperson.getId() > 0);
+		assertEquals("leonardo", findperson.getFirstName());
+		assertEquals("silva", findperson.getLastName());
+		assertEquals("belem", findperson.getAddress());
+		assertEquals("m",findperson.getGender());
+		assertEquals("leonardo@gmail.com", findperson.getEmail());
 	}
 
 }
