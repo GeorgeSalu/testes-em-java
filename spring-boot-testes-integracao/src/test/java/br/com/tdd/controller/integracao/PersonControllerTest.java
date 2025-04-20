@@ -214,8 +214,8 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 	
 	@Test
 	@Order(5)
-	@DisplayName("Teste de integracao JUnit operacao de delete de pessoa")
-	public void testeDeIntegracao_Quando_DeletarUmaPessoa_NaoDeveTerRetorno() throws JsonMappingException, JsonProcessingException {
+	@DisplayName("Teste de integracao JUnit operacao de delete de pessoa com sucesso deve retornar no content")
+	public void testeDeIntegracao_Quando_DeletarUmaPessoa_DeveRetornarNoContent() throws JsonMappingException, JsonProcessingException {
 		
 		given().spec(specification)
 				.pathParam("id", person.getId())
