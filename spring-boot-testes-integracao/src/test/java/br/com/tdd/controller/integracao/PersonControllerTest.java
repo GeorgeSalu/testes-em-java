@@ -5,6 +5,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -161,6 +164,52 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 		assertEquals("belem", findByIdPerson.getAddress());
 		assertEquals("m",findByIdPerson.getGender());
 		assertEquals("leonardo@gmail.com", findByIdPerson.getEmail());
+	}
+	
+	@Test
+	@Order(4)
+	@DisplayName("Teste de integracao JUnit consulta de pessoa por id deve retornar um objeto pessoa")
+	public void testeDeIntegracao_Quando_ConsultaTodasAsPessoa_deveRetornarUmaListaDeTodasPessoa() throws JsonMappingException, JsonProcessingException {
+		
+		given().spec(specification)
+			.contentType(TestConfigs.CONTENT_TYPE_JSON)
+			.body(new Person("gabriela", "silva", "gabriela@gmail.com", "belem", "m"))
+	    .when()
+	        .post()
+	    .then()
+	        .statusCode(200)
+	            .extract()
+	                .body()
+	                    .asString();
+		
+		var content = given().spec(specification)
+	            .when()
+	                .get()
+	            .then()
+	                .statusCode(200)
+			            .extract()
+			                .body()
+			                    .asString();
+		
+		List<Person> listPersons = Arrays.asList( objectMapper.readValue(content, Person[].class) );
+		
+		Person person = listPersons.get(0);
+		
+		assertNotNull(person);
+		assertNotNull(person.getId());
+		assertNotNull(person.getFirstName());
+		assertNotNull(person.getLastName());
+		assertNotNull(person.getAddress());
+		assertNotNull(person.getGender());
+		assertNotNull(person.getEmail());
+
+		
+		assertTrue(person.getId() > 0);
+		assertEquals("leonardo", person.getFirstName());
+		assertEquals("silva", person.getLastName());
+		assertEquals("belem", person.getAddress());
+		assertEquals("m",person.getGender());
+		assertEquals("leonardo@gmail.com", person.getEmail());
 	}
 
 }
