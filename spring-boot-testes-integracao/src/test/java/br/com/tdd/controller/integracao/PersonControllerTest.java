@@ -143,24 +143,24 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 			                .body()
 			                    .asString();
 		
-		Person findPerson = objectMapper.readValue(content, Person.class);
+		Person findByIdPerson = objectMapper.readValue(content, Person.class);
 		
 		
-		assertNotNull(findPerson);
-		assertNotNull(findPerson.getId());
-		assertNotNull(findPerson.getFirstName());
-		assertNotNull(findPerson.getLastName());
-		assertNotNull(findPerson.getAddress());
-		assertNotNull(findPerson.getGender());
-		assertNotNull(findPerson.getEmail());
+		assertNotNull(findByIdPerson);
+		assertNotNull(findByIdPerson.getId());
+		assertNotNull(findByIdPerson.getFirstName());
+		assertNotNull(findByIdPerson.getLastName());
+		assertNotNull(findByIdPerson.getAddress());
+		assertNotNull(findByIdPerson.getGender());
+		assertNotNull(findByIdPerson.getEmail());
 
 		
-		assertTrue(findPerson.getId() > 0);
-		assertEquals("leonardo", findPerson.getFirstName());
-		assertEquals("silva", findPerson.getLastName());
-		assertEquals("belem", findPerson.getAddress());
-		assertEquals("m",findPerson.getGender());
-		assertEquals("leonardo@gmail.com", findPerson.getEmail());
+		assertTrue(findByIdPerson.getId() > 0);
+		assertEquals("leonardo", findByIdPerson.getFirstName());
+		assertEquals("silva", findByIdPerson.getLastName());
+		assertEquals("belem", findByIdPerson.getAddress());
+		assertEquals("m",findByIdPerson.getGender());
+		assertEquals("leonardo@gmail.com", findByIdPerson.getEmail());
 	}
 
 }
