@@ -211,5 +211,19 @@ class PersonControllerTest extends AbstractTesteIntegracao {
 		assertEquals("m",person.getGender());
 		assertEquals("leonardo@gmail.com", person.getEmail());
 	}
+	
+	@Test
+	@Order(5)
+	@DisplayName("Teste de integracao JUnit operacao de delete de pessoa")
+	public void testeDeIntegracao_Quando_DeletarUmaPessoa_NaoDeveTerRetorno() throws JsonMappingException, JsonProcessingException {
+		
+		given().spec(specification)
+				.pathParam("id", person.getId())
+	            .when()
+	                .delete("{id}")
+	            .then()
+	                .statusCode(204);
+		
+	}
 
 }
